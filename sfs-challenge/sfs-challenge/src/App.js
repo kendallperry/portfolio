@@ -7,12 +7,15 @@ const sfsUserData =
 
 function App() {
   const [userData, setUserData] = useState([]);
+  // const [checked, setChecked] = useState({});
   const [checked, setChecked] = useState(new Array(userData.length).fill(false));
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
     getJSONdata();
   }, []);
+
+
 
   // Updates the state for which users are checked, as well as the total balance for all users
   const handleChange = (position) => {
@@ -54,13 +57,13 @@ function App() {
           </tr>
         </thead>
         <tbody>
-        {userData.map((user) => {
+        {userData.map((user, index) => {
           return (
             <tr key={user.id}>
             <input
               type="checkbox"
-              checked={checked}
-              onChange={handleChange}
+              checked={checked[index]}
+              onChange={() => handleChange(index)}
             />
             <td>{user.creditorName}</td>
             <td>{user.firstName}</td>

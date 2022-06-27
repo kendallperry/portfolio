@@ -1,4 +1,6 @@
 .App {
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -6,4 +8,13 @@ table, th {
   align-content: center;
   border: 1px solid black;
   padding: 3px;
+}
+
+table {
+  margin: 5%;
+}
+
+tfoot {
+  background-color: rgb(187, 208, 255);
+  font-weight: bold;
 }
