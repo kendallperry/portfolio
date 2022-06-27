@@ -14,7 +14,8 @@ function App() {
 
   const getJSONdata = async () => {
     const response = await axios.get(sfsUserData);
-    console.log("USER DATA", response);
+    setUserData(response.data);
+    console.log("USER DATA", userData);
   };
 
   return (
@@ -31,6 +32,17 @@ function App() {
             <th>Balance</th>
           </tr>
         </thead>
+        <tbody>
+        {userData.map((user) => {
+          return <tr key={user.id}>
+            <td>{user.creditorName}</td>
+            <td>{user.firstName}</td>
+            <td>{user.lastName}</td>
+            <td>{user.minPaymentPercentage}</td>
+            <td>{user.balance}</td>
+          </tr>
+        })}
+        </tbody>
       </table>
     </div>
   );
