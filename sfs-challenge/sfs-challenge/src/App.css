@@ -18,3 +18,11 @@ tfoot {
   background-color: rgb(187, 208, 255);
   font-weight: bold;
 }
+
+button {
+  background-color: white;
+  border: 1px solid black;
+}
+button:hover {
+  background-color: rgb(140, 255, 249);
+}

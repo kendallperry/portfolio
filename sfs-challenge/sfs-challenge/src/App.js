@@ -5,89 +5,108 @@ import axios from "axios";
 const sfsUserData =
   "https://raw.githubusercontent.com/StrategicFS/Recruitment/master/data.json";
 
+const dummyData =  {
+  creditorName: "AMEX",
+  firstName: "Suman",
+  lastName: "Tester79",
+  minPaymentPercentage: 2.00,
+  balance: 1234.00
+};
+
 function App() {
   const [userData, setUserData] = useState([]);
-  // const [checked, setChecked] = useState({});
-  const [checked, setChecked] = useState(new Array(userData.length).fill(false));
+  const [checked, setChecked] = useState(
+    new Array(userData.length).fill(false)
+  );
   const [total, setTotal] = useState(0);
-
-  useEffect(() => {
-    getJSONdata();
-  }, []);
-
-
-
-  // Updates the state for which users are checked, as well as the total balance for all users
-  const handleChange = (position) => {
-    const updateCheckedState = checked.map((user, idx) => 
-      idx === position ? !user : user
-    )
-    setChecked(updateCheckedState);
-
-    const totalBalance = updateCheckedState.reduce((sum, checkedState, idx) => {
-      if (checkedState) {
-        return sum + userData[idx].balance;
-      }
-      return sum;
-    }, 0)
-
-    setTotal(totalBalance);
- }
 
   const getJSONdata = async () => {
     const response = await axios.get(sfsUserData);
     setUserData(response.data);
   };
 
-  console.log("user data", userData);
+  useEffect(() => {
+    getJSONdata();
+  }, []);
+
+  // function to make axios post request 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setUserData(userData.concat(dummyData))
+  }
+
+  // Updates the state for which users are checked, as well as the total balance for all users
+  const handleChange = (position) => {
+    let updateCheckedState = checked.map((user, idx) =>
+      idx === position ? !user : user
+    );
+
+    setChecked(updateCheckedState);
+
+    let totalBalance = updateCheckedState.reduce((sum, currentValue, idx) => {
+      if (currentValue === true) return sum + userData[idx].balance;
+      else return sum;
+    }, 0);
+    console.log("total balance", totalBalance);
+    console.log("userData balance", userData[0].balance);
+
+    setTotal(totalBalance);
+  };
+
+  // console.log("user data", userData);
+
+  const checkedAmount = checked.reduce((sum, currentVal) => {
+    if (currentVal) return sum + 1;
+    return sum;
+  }, 0)
 
   return (
     <div className="App">
       <p>Strategic Financial Solutions</p>
       <p>Coding Challenge</p>
-      <table>
-        <thead>
-          <tr>
-            <th></th>
-            <th>Creditor</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Min Pay %</th>
-            <th>Balance</th>
-          </tr>
-        </thead>
-        <tbody>
-        {userData.map((user, index) => {
-          return (
-            <tr key={user.id}>
-            <input
-              type="checkbox"
-              checked={checked[index]}
-              onChange={() => handleChange(index)}
-            />
-            <td>{user.creditorName}</td>
-            <td>{user.firstName}</td>
-            <td>{user.lastName}</td>
-            <td>{user.minPaymentPercentage}</td>
-            <td>{user.balance}</td>
-          </tr>
-          )
-        })}
-        </tbody>
-        <tfoot>
-          <tr>
-            <td></td>
-            <td>Total</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td>{total}</td>
-          </tr>
-        </tfoot>
-      </table>
+      <div className="tableContent">
+        <table>
+          <thead>
+            <tr>
+              <th></th>
+              <th>Creditor</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Min Pay %</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            {userData.map((user, index) => {
+              return (
+                <tr key={index}>
+                  <td>
+                    <input
+                      type="checkbox"
+                      checked={checked[index]}
+                      onChange={() => handleChange(index)}
+                    />
+                  </td>
+                  <td>{user.creditorName}</td>
+                  <td>{user.firstName}</td>
+                  <td>{user.lastName}</td>
+                  <td>{user.minPaymentPercentage}</td>
+                  <td>{user.balance}</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+        <button>Remove Debt</button>
+        <br />
+        <form onSubmit={handleSubmit}>
+          <button>Add Debt</button>
+        </form>
+        <p>Total: {total}</p>
+      </div>
       <>
         <p>Total Row Count: {userData.length}</p>
-        <p>Check Row Count: </p>
+        <p>Check Row Count: {checkedAmount} </p>
       </>
     </div>
   );
