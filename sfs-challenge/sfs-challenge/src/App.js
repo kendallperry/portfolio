@@ -5,12 +5,12 @@ import axios from "axios";
 const sfsUserData =
   "https://raw.githubusercontent.com/StrategicFS/Recruitment/master/data.json";
 
-const dummyData =  {
-  creditorName: "AMEX",
+const dummyData = {
+  creditorName: "NYC BANK",
   firstName: "Suman",
   lastName: "Tester79",
-  minPaymentPercentage: 2.00,
-  balance: 1234.00
+  minPaymentPercentage: 2.5,
+  balance: 1234.0,
 };
 
 function App() {
@@ -29,11 +29,17 @@ function App() {
     getJSONdata();
   }, []);
 
-  // function to make axios post request 
-  const handleSubmit = async (e) => {
+  // Handles adding a row to table with dummy data.
+  const handleSubmit = (e) => {
     e.preventDefault();
-    setUserData(userData.concat(dummyData))
-  }
+    setUserData(userData.concat(dummyData));
+  };
+
+  // Handles deleting most recent row from table
+  const handleDelete = (e) => {
+    e.preventDefault();
+    setUserData(userData.splice(0, userData.length -1));
+  };
 
   // Updates the state for which users are checked, as well as the total balance for all users
   const handleChange = (position) => {
@@ -58,7 +64,7 @@ function App() {
   const checkedAmount = checked.reduce((sum, currentVal) => {
     if (currentVal) return sum + 1;
     return sum;
-  }, 0)
+  }, 0);
 
   return (
     <div className="App">
@@ -97,7 +103,9 @@ function App() {
             })}
           </tbody>
         </table>
-        <button>Remove Debt</button>
+        <form onSubmit={handleDelete}>
+          <button>Remove Debt</button>
+        </form>
         <br />
         <form onSubmit={handleSubmit}>
           <button>Add Debt</button>
