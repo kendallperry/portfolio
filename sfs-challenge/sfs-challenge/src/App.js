@@ -41,7 +41,7 @@ function App() {
             <td>{user.minPaymentPercentage}</td>
             <td>{user.balance}</td>
           </tr>
-        })}
+        })};
         </tbody>
       </table>
     </div>
