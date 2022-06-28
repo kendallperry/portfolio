@@ -1,7 +1,8 @@
 import "./App.css";
-import Header from "./Header";
+import TableHeader from "./TableHeader";
 import Buttons from "./Buttons";
 import TableBody from "./TableBody";
+import TotalAmounts from "./Totals";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { JSON_DATA_URL, dummyData } from "./setupInfo";
@@ -55,21 +56,13 @@ function App() {
       <h4>Coding Challenge | Kendall Perry</h4>
       <div className="tableContent">
         <table>
-          <Header />
+          <TableHeader />
           <TableBody userData={userData} handleChecked={handleChecked} />
         </table>
-          <Buttons handleDelete={handleDelete} handleSubmit={handleSubmit} />
-        </div>
-        <div className="total">
-          <p>Total:</p>
-          <p data-testid="totalNum">${total.toFixed(2)}</p>
-        </div>
-
-        <div className="rowCount">
-          <p data-testid="totalRowCount">Total Row Count: {userData.length}</p>
-          <p data-testid="totalChecked">Check Row Count: {checked.length}</p>
-        </div>
+        <Buttons handleDelete={handleDelete} handleSubmit={handleSubmit} />
+        <TotalAmounts total={total} userData={userData} checked={checked} />
       </div>
+    </div>
   );
 }
 
