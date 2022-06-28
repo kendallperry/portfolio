@@ -1,8 +1,15 @@
 import { render, screen, waitFor, userEvent } from "@testing-library/react";
-import axios from "axios";
+import mockFetch from "../setupTests";
 import App from "../App";
 import Header from "../Header";
 
+beforeEach(() => {
+  jest.spyOn(window, "fetch").mockImplementation(mockFetch);
+})
+
+afterEach(() => {
+  jest.restoreAllMocks()
+});
 
 describe("Renders the landing page", () => {
   test("contains SFS heading", () => {
@@ -38,11 +45,17 @@ describe("Initial Values", () => {
     render(<App />);
     const totalNum = await screen.findByTestId("totalNum");
     expect(totalNum.textContent).toBe("$0.00");
+    expect(totalNum).toBeInTheDocument();
   })
   test("initial checked boxes to equal 0", async () => {
     render(<App />);
     const totalChecked = await screen.findByTestId("totalChecked");
     expect(totalChecked.textContent).toBe("Check Row Count: 0");
+  })
+  test("total row count is included", async () => {
+    render(<App />);
+    const totalRowCount = await screen.findByTestId("totalRowCount");
+    expect(totalRowCount).toBeInTheDocument();
   })
 });
 
@@ -71,49 +84,12 @@ describe("Table header component", () => {
 
 
 
-// jest.mock('axios');
-const fakeUsers = [{
-        "id": 1,
-        "creditorName": "NYC Bank",
-        "firstName": "Test",
-        "lastName": "User",
-        "minPaymentPercentage": 1.5,
-        "balance": 1000,
-      }, {
-        "id": 2,
-        "creditorName": "NYC Bank",
-        "firstName": "Test2",
-        "lastName": "User2",
-        "minPaymentPercentage": 2.5,
-        "balance": 2000,
-      }];
+  // xtest("user data", async () => {
+  //   axios.get.mockResolvedValue({ data: fakeUsers });
+  //   const userRows = await waitFor(() => screen.findAllByTestId("userRow"));
+  //   expect(userRows).toHaveLength(2);
+  // })
 
-  xtest("user data", async () => {
-    axios.get.mockResolvedValue({ data: fakeUsers });
-    const userRows = await waitFor(() => screen.findAllByTestId("userRow"));
-    expect(userRows).toHaveLength(2);
-  })
-
-// describe('getJSONdata', () = > {
-//   it('should return users lists', async () => {
-
-//     const fakeUsers = [{
-//       "id": 1,
-//       "creditorName": "NYC Bank",
-//       "firstName": "Test",
-//       "lastName": "User",
-//       "minPaymentPercentage": 1.5,
-//       "balance": 1000,
-//     }, {
-//       "id": 2,
-//       "creditorName": "NYC Bank",
-//       "firstName": "Test2",
-//       "lastName": "User2",
-//       "minPaymentPercentage": 2.5,
-//       "balance": 2000,
-//     }];
-
-// })
 
 // describe('Loads JSON using axios', () => {
 //   test('it displays a row for each user', async () => {

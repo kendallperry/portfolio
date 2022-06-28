@@ -1,9 +1,10 @@
 import "./App.css";
 import Header from "./Header";
+import Buttons from "./Buttons";
+import TableBody from "./TableBody";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { JSON_DATA_URL, dummyData } from './setupInfo'
-
+import { JSON_DATA_URL, dummyData } from "./setupInfo";
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -55,33 +56,9 @@ function App() {
       <div className="tableContent">
         <table>
           <Header />
-          <tbody>
-            {userData.map((user, index) => {
-              return (
-                <tr data-testid="userRow" key={index}>
-                  <td>
-                    <input
-                      type="checkbox"
-                      onChange={(e) => handleChecked(e, user)}
-                    />
-                  </td>
-                  <td>{user.creditorName}</td>
-                  <td>{user.firstName}</td>
-                  <td>{user.lastName}</td>
-                  <td>{user.minPaymentPercentage.toFixed(2)}%</td>
-                  <td>{user.balance.toFixed(2)}</td>
-                </tr>
-              );
-            })}
-          </tbody>
+          <TableBody userData={userData} handleChecked={handleChecked} />
         </table>
-        <div className="buttons">
-          <form onSubmit={handleDelete}>
-            <button data-testid="deleteButton">Remove Debt</button>
-          </form>
-          <form onSubmit={handleSubmit}>
-            <button data-testid="addButton">Add Debt</button>
-          </form>
+          <Buttons handleDelete={handleDelete} handleSubmit={handleSubmit} />
         </div>
         <div className="total">
           <p>Total:</p>
@@ -89,11 +66,10 @@ function App() {
         </div>
 
         <div className="rowCount">
-          <p>Total Row Count: {userData.length}</p>
+          <p data-testid="totalRowCount">Total Row Count: {userData.length}</p>
           <p data-testid="totalChecked">Check Row Count: {checked.length}</p>
         </div>
       </div>
-    </div>
   );
 }
 
