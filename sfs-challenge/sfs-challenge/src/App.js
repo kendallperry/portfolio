@@ -13,12 +13,13 @@ const dummyData = {
   balance: 1234.0,
 };
 
+//new Array(userData.length).fill(false)
+
 function App() {
   const [userData, setUserData] = useState([]);
-  const [checked, setChecked] = useState(
-    new Array(userData.length).fill(false)
-  );
+  const [checked, setChecked] = useState([]);
   const [total, setTotal] = useState(0);
+  // const [numChecked, setNumChecked] = useState(0);
 
   const getJSONdata = async () => {
     const response = await axios.get(sfsUserData);
@@ -42,34 +43,40 @@ function App() {
   };
 
   // Updates the state for which users are checked, as well as the total balance for all users
-  const handleChange = (position) => {
-    let updateCheckedState = checked.map((user, idx) =>
-      idx === position ? !user : user
-    );
+  const handleCheck = (e) => {
+    let updatedChecked = [...checked];
+    if (e.target.checked) {
+      updatedChecked = [...checked, e.target.value]
+    } else {
+      updatedChecked.splice(checked[e.target.value], 1);
+    }
 
-    setChecked(updateCheckedState);
+    setChecked(updatedChecked);
 
-    let totalBalance = updateCheckedState.reduce((sum, currentValue, idx) => {
-      if (currentValue === true) return sum + userData[idx].balance;
-      else return sum;
-    }, 0);
-    console.log("total balance", totalBalance);
-    console.log("userData balance", userData[0].balance);
+    // let updateCheckedState = checked.map((user, idx) =>
+    //   idx === position ? !user : user
+    // );
 
-    setTotal(totalBalance);
+    // setChecked(updateCheckedState);
+
+    // let totalBalance = updateCheckedState.reduce((sum, currentValue, idx) => {
+    //   if (currentValue === true) return sum + userData[idx].balance;
+    //   else return sum;
+    // }, 0);
+    // console.log("total balance", totalBalance);
+    // console.log("userData balance", userData[0].balance);
+
+    // setTotal(totalBalance);
   };
 
   // console.log("user data", userData);
-
-  const checkedAmount = checked.reduce((sum, currentVal) => {
-    if (currentVal) return sum + 1;
-    return sum;
-  }, 0);
+  console.log('checked state', checked);
+  
 
   return (
     <div className="App">
       <p>Strategic Financial Solutions</p>
-      <p>Coding Challenge</p>
+      <p>Coding Challenge | Kendall Perry</p>
       <div className="tableContent">
         <table>
           <thead>
@@ -88,9 +95,10 @@ function App() {
                 <tr key={index}>
                   <td>
                     <input
+                     // value={user}
                       type="checkbox"
-                      checked={checked[index]}
-                      onChange={() => handleChange(index)}
+                      //checked={checked[index]}
+                      onChange={handleCheck}
                     />
                   </td>
                   <td>{user.creditorName}</td>
@@ -114,7 +122,7 @@ function App() {
       </div>
       <>
         <p>Total Row Count: {userData.length}</p>
-        <p>Check Row Count: {checkedAmount} </p>
+        <p>Check Row Count: {checked.length} </p>
       </>
     </div>
   );
