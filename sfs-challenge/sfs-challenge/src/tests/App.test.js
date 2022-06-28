@@ -1,4 +1,4 @@
-import { render, screen, waitFor, fireEvent } from "@testing-library/react";
+import { render, screen, waitFor, userEvent } from "@testing-library/react";
 import axios from "axios";
 import App from "../App";
 import Header from "../Header";
@@ -34,7 +34,7 @@ describe("Add and Remove Debt Button", () => {
 });
 
 describe("Initial Values", () => {
-  test("initial value of total is 0, to two decimal places", async () => {
+  test("initial value of total is 0, displayed to two decimal places", async () => {
     render(<App />);
     const totalNum = await screen.findByTestId("totalNum");
     expect(totalNum.textContent).toBe("$0.00");
@@ -46,9 +46,16 @@ describe("Initial Values", () => {
   })
 });
 
+// describe("Values after buttons clicked", () => {
+//   test("add button increments check row by 1", () => {
+//     render(<App />);
+//     const mockFunction = jest.fn(() => console.info('button clicked'));
+//   })
+// })
+
 describe("Table header component", () => {
   test("contains correct column names", async () => {
-    render(<App />);
+    render(<Header />);
     const th1 = await screen.findByTestId("th1");
     const th2 = await screen.findByTestId("th2");
     const th3 = await screen.findByTestId("th3");

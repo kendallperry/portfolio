@@ -79,7 +79,7 @@ function App() {
                   <td>{user.creditorName}</td>
                   <td>{user.firstName}</td>
                   <td>{user.lastName}</td>
-                  <td>{user.minPaymentPercentage.toFixed(2)}</td>
+                  <td>{user.minPaymentPercentage.toFixed(2)}%</td>
                   <td>{user.balance.toFixed(2)}</td>
                 </tr>
               );
