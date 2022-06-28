@@ -1,7 +1,7 @@
 import { render, screen, waitFor, userEvent } from "@testing-library/react";
 import mockFetch from "../setupTests";
 import App from "../App";
-import Header from "../Header";
+import TableHeader from "../TableHeader";
 
 beforeEach(() => {
   jest.spyOn(window, "fetch").mockImplementation(mockFetch);
@@ -68,7 +68,7 @@ describe("Initial Values", () => {
 
 describe("Table header component", () => {
   test("contains correct column names", async () => {
-    render(<Header />);
+    render(<TableHeader />);
     const th1 = await screen.findByTestId("th1");
     const th2 = await screen.findByTestId("th2");
     const th3 = await screen.findByTestId("th3");

@@ -33,6 +33,7 @@ function App() {
     let deletedUser = userData[userData.length - 1];
     if (checked.includes(deletedUser.id)) {
       setTotal(total - deletedUser.balance);
+      setChecked(checked.splice(0, checked.length - 1));
     }
     setUserData(userData.splice(0, userData.length - 1));
   };
