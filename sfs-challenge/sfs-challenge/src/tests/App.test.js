@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import user from "@testing-library/user-event";
-import mockFetch from "../setupTests";
+import mockFetch, { fakeUsers } from "../setupTests";
 import App from "../App";
 import Buttons from "../Buttons";
 import TableHeader from "../TableHeader";
@@ -20,11 +20,21 @@ describe("Initial Render", () => {
     const header = screen.getByTestId("header");
     expect(header.textContent).toBe("Strategic Financial Solutions")
   });
+
   test("contains data table", () => {
     render(<App />)
     const dataTable = screen.getByRole("table");
     expect(dataTable).toBeInTheDocument();
   });
+
+  test('App component initially loads and renders json', async () => {
+    // const asyncMock = jest.fn()
+    // .mockFetch.mockResolvedValue({
+    //   data: fakeUsers
+    // });
+    const { container } = render(<App />);
+    expect(container).toBeDefined();
+  })
 });
 
 describe('Add & Remove buttons', () => {
@@ -35,6 +45,14 @@ describe('Add & Remove buttons', () => {
     expect(addDebtButton.textContent).toBe("Add Debt");
   });
 
+  test("add debt calls the handleSubmit function", async () => {
+    const mockSubmit = jest.fn();
+    render(<Buttons handleSubmit={mockSubmit}/>)
+    const addButton = await screen.findByTestId("addButton");
+    user.click(addButton);
+    expect(mockSubmit).toBeCalledTimes(1);
+  });
+
   test("remove debt button renders", async () => {
     render(<App />);
     const deleteDebtBtn = await screen.findByTestId("deleteButton");
@@ -42,16 +60,7 @@ describe('Add & Remove buttons', () => {
     expect(deleteDebtBtn.textContent).toBe("Remove Debt");
   });
 
-  test("add debt calls the handleSubmit function passed to it", async () => {
-    const mockSubmit = jest.fn();
-    render(<Buttons handleSubmit={mockSubmit}/>)
-    const addButton = await screen.findByTestId("addButton");
-    //screen.logTestingPlaygroundURL()
-    user.click(addButton);
-    expect(mockSubmit).toBeCalledTimes(1);
-  });
-
-  test("remove debt calls handleDelete function passed to it", async () => {
+  test("remove debt calls handleDelete function", async () => {
     const mockDelete = jest.fn();
     render(<Buttons handleDelete={mockDelete} />);
     const deleteBtn = await screen.findByTestId("deleteButton");

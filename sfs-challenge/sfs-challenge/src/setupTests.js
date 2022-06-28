@@ -5,7 +5,7 @@
 import '@testing-library/jest-dom';
 import { JSON_DATA_URL } from './setupInfo';
 
-const fakeUsers = [{
+export const fakeUsers = [{
     "id": 1,
     "creditorName": "NYC Bank",
     "firstName": "Test",
