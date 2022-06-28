@@ -1,6 +1,8 @@
-import { render, screen, waitFor, userEvent } from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
+import user from "@testing-library/user-event";
 import mockFetch from "../setupTests";
 import App from "../App";
+import Buttons from "../Buttons";
 import TableHeader from "../TableHeader";
 
 beforeEach(() => {
@@ -11,7 +13,8 @@ afterEach(() => {
   jest.restoreAllMocks()
 });
 
-describe("Renders the landing page", () => {
+
+describe("Initial Render", () => {
   test("contains SFS heading", () => {
     render(<App />);
     const header = screen.getByTestId("header");
@@ -24,7 +27,7 @@ describe("Renders the landing page", () => {
   });
 });
 
-describe("Add and Remove Debt Button", () => {
+describe('Add & Remove buttons', () => {
   test("add debt button renders", async () => {
     render(<App />);
     const addDebtButton = await screen.findByTestId("addButton");
@@ -37,6 +40,23 @@ describe("Add and Remove Debt Button", () => {
     const deleteDebtBtn = await screen.findByTestId("deleteButton");
     expect(deleteDebtBtn).toBeInTheDocument();
     expect(deleteDebtBtn.textContent).toBe("Remove Debt");
+  });
+
+  test("add debt calls the handleSubmit function passed to it", async () => {
+    const mockSubmit = jest.fn();
+    render(<Buttons handleSubmit={mockSubmit}/>)
+    const addButton = await screen.findByTestId("addButton");
+    //screen.logTestingPlaygroundURL()
+    user.click(addButton);
+    expect(mockSubmit).toBeCalledTimes(1);
+  });
+
+  test("remove debt calls handleDelete function passed to it", async () => {
+    const mockDelete = jest.fn();
+    render(<Buttons handleDelete={mockDelete} />);
+    const deleteBtn = await screen.findByTestId("deleteButton");
+    user.click(deleteBtn);
+    expect(mockDelete).toBeCalledTimes(1);
   });
 });
 
@@ -80,7 +100,9 @@ describe("Table header component", () => {
     expect(th4.textContent).toBe("Min Pay %");
     expect(th5.textContent).toBe("Balance");
   })
-})
+});
+
+
 
 
 
