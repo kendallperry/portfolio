@@ -55,7 +55,6 @@ function App() {
       updatedChecked.splice(checked[user.id], 1);
       setTotal(total - user.balance);
     }
-    console.log(checked);
     setChecked(updatedChecked);
   };
 
@@ -97,10 +96,10 @@ function App() {
         </table>
         <div className="buttons">
           <form onSubmit={handleDelete}>
-            <button>Remove Debt</button>
+            <button data-testid="deleteButton">Remove Debt</button>
           </form>
-          <form onSubmit={handleSubmit}>
-            <button>Add Debt</button>
+          <form data-testid="addSubmit" onSubmit={handleSubmit}>
+            <button data-testid="addButton">Add Debt</button>
           </form>
         </div>
         <div className="total">
