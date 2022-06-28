@@ -42,14 +42,14 @@ function App() {
     if (checked.includes(deletedUser.id)) {
       setTotal(total - deletedUser.balance);
     }
-    setUserData(userData.splice(0, userData.length -1));
+    setUserData(userData.splice(0, userData.length - 1));
   };
 
   // Updates the state for which users are checked, as well as the total balance for all users
   const handleChecked = (e, user) => {
     let updatedChecked = [...checked];
     if (e.target.checked) {
-      updatedChecked = [...checked, user.id]
+      updatedChecked = [...checked, user.id];
       setTotal(total + user.balance);
     } else {
       updatedChecked.splice(checked[user.id], 1);
@@ -59,11 +59,10 @@ function App() {
     setChecked(updatedChecked);
   };
 
-  
   return (
     <div className="App">
-      <p>Strategic Financial Solutions</p>
-      <p>Coding Challenge | Kendall Perry</p>
+      <h3>Strategic Financial Solutions</h3>
+      <h4>Coding Challenge | Kendall Perry</h4>
       <div className="tableContent">
         <table>
           <thead>
@@ -89,26 +88,31 @@ function App() {
                   <td>{user.creditorName}</td>
                   <td>{user.firstName}</td>
                   <td>{user.lastName}</td>
-                  <td>{user.minPaymentPercentage}</td>
-                  <td>{user.balance}</td>
+                  <td>{user.minPaymentPercentage.toFixed(2)}</td>
+                  <td>{user.balance.toFixed(2)}</td>
                 </tr>
               );
             })}
           </tbody>
         </table>
-        <form onSubmit={handleDelete}>
-          <button>Remove Debt</button>
-        </form>
-        <br />
-        <form onSubmit={handleSubmit}>
-          <button>Add Debt</button>
-        </form>
-        <p>Total: {total}</p>
+        <div className="buttons">
+          <form onSubmit={handleDelete}>
+            <button>Remove Debt</button>
+          </form>
+          <form onSubmit={handleSubmit}>
+            <button>Add Debt</button>
+          </form>
+        </div>
+        <div className="total">
+          <p>Total:</p>
+          <p>${total.toFixed(2)}</p>
+        </div>
+
+        <div className="rowCount">
+          <p>Total Row Count: {userData.length}</p>
+          <p>Check Row Count: {checked.length} </p>
+        </div>
       </div>
-      <>
-        <p>Total Row Count: {userData.length}</p>
-        <p>Check Row Count: {checked.length} </p>
-      </>
     </div>
   );
 }
