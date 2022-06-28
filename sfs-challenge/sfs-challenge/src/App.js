@@ -6,6 +6,7 @@ const sfsUserData =
   "https://raw.githubusercontent.com/StrategicFS/Recruitment/master/data.json";
 
 const dummyData = {
+  id: 11,
   creditorName: "NYC BANK",
   firstName: "Suman",
   lastName: "Tester79",
@@ -36,21 +37,25 @@ function App() {
   // Handles deleting most recent row from table
   const handleDelete = (e) => {
     e.preventDefault();
-    console.log(e.target)
+    let deletedUser = userData[userData.length - 1];
+    console.log(deletedUser);
+    if (checked.includes(deletedUser.id)) {
+      setTotal(total - deletedUser.balance);
+    }
     setUserData(userData.splice(0, userData.length -1));
-    //setTotal(total - deletedUser.balance);
   };
 
   // Updates the state for which users are checked, as well as the total balance for all users
   const handleChecked = (e, user) => {
     let updatedChecked = [...checked];
     if (e.target.checked) {
-      updatedChecked = [...checked, e.target.value]
+      updatedChecked = [...checked, user.id]
       setTotal(total + user.balance);
     } else {
-      updatedChecked.splice(checked[e.target.value], 1);
+      updatedChecked.splice(checked[user.id], 1);
       setTotal(total - user.balance);
     }
+    console.log(checked);
     setChecked(updatedChecked);
   };
 
@@ -77,10 +82,7 @@ function App() {
                 <tr key={index}>
                   <td>
                     <input
-                     // value={user}
                       type="checkbox"
-                      //checked={checked[index]}
-                      //onChange={handleCheck}
                       onChange={(e) => handleChecked(e, user)}
                     />
                   </td>
