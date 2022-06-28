@@ -1,4 +1,5 @@
 import "./App.css";
+import Header from "./Header";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -60,20 +61,11 @@ function App() {
 
   return (
     <div className="App">
-      <h3>Strategic Financial Solutions</h3>
+      <h3 data-testid="header">Strategic Financial Solutions</h3>
       <h4>Coding Challenge | Kendall Perry</h4>
       <div className="tableContent">
         <table>
-          <thead>
-            <tr>
-              <th></th>
-              <th>Creditor</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Min Pay %</th>
-              <th>Balance</th>
-            </tr>
-          </thead>
+          <Header />
           <tbody>
             {userData.map((user, index) => {
               return (
@@ -98,18 +90,18 @@ function App() {
           <form onSubmit={handleDelete}>
             <button data-testid="deleteButton">Remove Debt</button>
           </form>
-          <form data-testid="addSubmit" onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit}>
             <button data-testid="addButton">Add Debt</button>
           </form>
         </div>
         <div className="total">
           <p>Total:</p>
-          <p>${total.toFixed(2)}</p>
+          <p data-testid="totalNum">${total.toFixed(2)}</p>
         </div>
 
         <div className="rowCount">
           <p>Total Row Count: {userData.length}</p>
-          <p>Check Row Count: {checked.length} </p>
+          <p data-testid="totalChecked">Check Row Count: {checked.length}</p>
         </div>
       </div>
     </div>
