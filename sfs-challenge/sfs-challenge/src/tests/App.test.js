@@ -72,6 +72,27 @@ describe("Table header component", () => {
 
 
 // jest.mock('axios');
+const fakeUsers = [{
+        "id": 1,
+        "creditorName": "NYC Bank",
+        "firstName": "Test",
+        "lastName": "User",
+        "minPaymentPercentage": 1.5,
+        "balance": 1000,
+      }, {
+        "id": 2,
+        "creditorName": "NYC Bank",
+        "firstName": "Test2",
+        "lastName": "User2",
+        "minPaymentPercentage": 2.5,
+        "balance": 2000,
+      }];
+
+  xtest("user data", async () => {
+    axios.get.mockResolvedValue({ data: fakeUsers });
+    const userRows = await waitFor(() => screen.findAllByTestId("userRow"));
+    expect(userRows).toHaveLength(2);
+  })
 
 // describe('getJSONdata', () = > {
 //   it('should return users lists', async () => {

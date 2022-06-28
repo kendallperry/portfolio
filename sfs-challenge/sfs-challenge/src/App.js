@@ -2,18 +2,8 @@ import "./App.css";
 import Header from "./Header";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { JSON_DATA_URL, dummyData } from './setupInfo'
 
-const sfsUserData =
-  "https://raw.githubusercontent.com/StrategicFS/Recruitment/master/data.json";
-
-const dummyData = {
-  id: 11,
-  creditorName: "NYC BANK",
-  firstName: "Suman",
-  lastName: "Tester79",
-  minPaymentPercentage: 2.5,
-  balance: 1234.0,
-};
 
 function App() {
   const [userData, setUserData] = useState([]);
@@ -21,8 +11,8 @@ function App() {
   const [total, setTotal] = useState(0);
 
   const getJSONdata = async () => {
-    const response = await axios.get(sfsUserData);
-    setUserData(response.data);
+    const { data } = await axios.get(JSON_DATA_URL);
+    setUserData(data);
   };
 
   useEffect(() => {
@@ -39,7 +29,6 @@ function App() {
   const handleDelete = (e) => {
     e.preventDefault();
     let deletedUser = userData[userData.length - 1];
-    console.log(deletedUser);
     if (checked.includes(deletedUser.id)) {
       setTotal(total - deletedUser.balance);
     }
@@ -69,7 +58,7 @@ function App() {
           <tbody>
             {userData.map((user, index) => {
               return (
-                <tr key={index}>
+                <tr data-testid="userRow" key={index}>
                   <td>
                     <input
                       type="checkbox"
