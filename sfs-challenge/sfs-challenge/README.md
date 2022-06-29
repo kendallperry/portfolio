@@ -1,6 +1,9 @@
 ## Strategic Financial Solutions:
 Coding Challenge by Kendall Perry
 
+Video Walkthrough: https://youtu.be/_8Glef_S_1A
+Built in JavaScript with create-react-app, and Axios, React, React Testing Library & Jest. 
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -9,9 +12,6 @@ In the project directory, you can run:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
 ### `npm test`
 
