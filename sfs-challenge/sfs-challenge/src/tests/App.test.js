@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import user from "@testing-library/user-event";
 import mockFetch, { fakeUsers } from "../setupTests";
 import App from "../App";
@@ -28,10 +28,6 @@ describe("Initial Render", () => {
   });
 
   test('App component initially loads and renders json', async () => {
-    // const asyncMock = jest.fn()
-    // .mockFetch.mockResolvedValue({
-    //   data: fakeUsers
-    // });
     const { container } = render(<App />);
     expect(container).toBeDefined();
   })
@@ -88,13 +84,6 @@ describe("Initial Values", () => {
   })
 });
 
-// describe("Values after buttons clicked", () => {
-//   test("add button increments check row by 1", () => {
-//     render(<App />);
-//     const mockFunction = jest.fn(() => console.info('button clicked'));
-//   })
-// })
-
 describe("Table header component", () => {
   test("contains correct column names", async () => {
     render(<TableHeader />);
@@ -110,22 +99,3 @@ describe("Table header component", () => {
     expect(th5.textContent).toBe("Balance");
   })
 });
-
-
-
-
-
-  // xtest("user data", async () => {
-  //   axios.get.mockResolvedValue({ data: fakeUsers });
-  //   const userRows = await waitFor(() => screen.findAllByTestId("userRow"));
-  //   expect(userRows).toHaveLength(2);
-  // })
-
-
-// describe('Loads JSON using axios', () => {
-//   test('it displays a row for each user', async () => {
-//     render(<App />);
-//     expect(axios.get).toEqual());
-//    // expect(axios.get).toHaveBeenCalled(jest.fn());
-//   })
-// })
