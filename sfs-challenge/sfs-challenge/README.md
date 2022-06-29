@@ -1,7 +1,7 @@
 ## Strategic Financial Solutions:
 Coding Challenge by Kendall Perry
 
-Video Walkthrough: https://youtu.be/_8Glef_S_1A
+Video Walkthrough: https://youtu.be/_8Glef_S_1A \
 Built in JavaScript with create-react-app, and Axios, React, React Testing Library & Jest. 
 
 ## Available Scripts
