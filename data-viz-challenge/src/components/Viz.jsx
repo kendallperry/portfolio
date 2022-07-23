@@ -19,8 +19,12 @@ export default function Viz({ data }) {
     if (data.length) {
       let newVizData = [];
 
-      for (let i = topNumber; i >= 0; i--) {
-        let country = data[i].location_name;
+      for (let i = topNumber - 1; i >= 0; i--) {
+        let country = `${data[i].location_name} ${i + 1}`;
+        if (country.length > 23) {
+          let end = country.slice(-2)
+          country = `${country.slice(0, 21)}..${end}`
+        }
         let mean = data[i].mean;
         let displayObj = { x: country, y: mean };
         newVizData.push(displayObj);
@@ -41,7 +45,7 @@ export default function Viz({ data }) {
           style={{
             axis: { strokeWidth: 0 },
             grid: { stroke: "none" },
-            tickLabels: { fontSize: 4.5, padding: 0.5, margin: 10, stroke: "#", angle: 0 },
+            tickLabels: { fontSize: 4, padding: 0.5, margin: 10, stroke: "#", angle: 0 },
           }}
         />
         <VictoryAxis dependentAxis orientation="top" />
