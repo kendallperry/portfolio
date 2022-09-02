@@ -10,4 +10,14 @@ O(1) -- Constant Time
 
 Best time complexity for sorting anything non numbers, 
 the best you can get is O n(log n) 
+
+Linked List Big O: 
+
+O(1) - to push something to the end (to the tail)
+     - adding something to the head, removing from the beginning
+O(n) - popping something from end of list, since you need to go through entire list to point the TAIL to the one right before. 
+     - inserting a new node into the list at a certain place
+     - deleting a node inside the LL
+     - searching by value or index, still O(n), (different from array, array you can find by index at O(1))
+
  
