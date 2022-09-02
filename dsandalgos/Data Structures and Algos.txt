@@ -1,7 +1,13 @@
 Data Structures and Algorithms 
- -- Udemy Course Notes --
 
- ** Big O **
- Big O will always represent/measure the worst case.
- O(n) - will always be a straight line, it will always be proportional
+** Big O **
 
+Big O will always represent/measure the worst case.
+O(n^2) -- "Loop within a loop"
+O(n) -- Proportional 
+O(log n) -- Divide and Conquer
+O(1) -- Constant Time
+
+Best time complexity for sorting anything non numbers, 
+the best you can get is O n(log n) 
+ 

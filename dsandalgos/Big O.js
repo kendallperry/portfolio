@@ -23,6 +23,20 @@ function logItems2(n) {
   }
 }
 
+// DIFFERENT TERMS FOR INPUTS
+// However! This would be O(a + b), since you have different terms for inputs 
+
+function logItemsab(a, b) {
+    for (let i = 0; i < a; i++) {
+      console.log(i);
+    }
+  
+    for (let j = 0; j < b; j++) {
+      console.log(j);
+    }
+  }
+
+
 // O(n^2)
 // This would be n * n
 
@@ -62,3 +76,36 @@ function logItems4(n) {
 function addItems(n) {
     return n + n;
 }
+
+// O(log n) 
+// Deals with sorting, you cut in half to find an item
+// "Divide and conquer"
+// Very efficient, very flat, not quite O(1), but close!
+
+
+// O n(log n) 
+// Some sorting algorithms, as efficient as you can make a sorting algorithm
+
+
+
+
+// ARRAY OPERATIONS
+// Push and pop are both O(1) operations, because the index is on the end
+
+let myArray = [11, 3, 23, 7]
+myArray.push(17);
+myArray.pop();
+
+// Shift is different, since all the items have to be reindexed
+// This would be O(n), and n would be the number of items in the array
+
+myArray.shift();
+myArray.unshift()
+
+// Put something in at index of 1, remove 0 items, and drop in new item
+// Also have to re-index the remainder of the array - still O(n).
+myArray.splice(1, 0, 'Hi')
+
+// Search by value in array, is O(n), Search by index is O(1)!
+// Index can be disadvantage if you add to beginning of array or putting something in the middle
+
