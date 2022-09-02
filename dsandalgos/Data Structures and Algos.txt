@@ -1,0 +1,7 @@
+Data Structures and Algorithms 
+ -- Udemy Course Notes --
+
+ ** Big O **
+ Big O will always represent/measure the worst case.
+ O(n) - will always be a straight line, it will always be proportional
+
