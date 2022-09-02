@@ -40,3 +40,18 @@ myLinkedList.insert(1, 11)
 myLinkedList.remove(3) // et cetera! 
 
 
+// POINTERS 
+// obj1 points to this object 
+
+let obj1 = {
+    value: 11
+}
+
+// make obj2 point to the same object as obj1 in memory
+let obj2 = obj1;
+
+let obj3 = {
+    value: 57
+}
+
+obj2 = obj3; 
