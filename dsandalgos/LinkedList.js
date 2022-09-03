@@ -13,3 +13,28 @@
     value: 4,
     next: null // next would be another node that it points to
 }
+
+// Constructor 
+
+class LinkedList {
+    constructor(value) {
+        const newNode = new Node(value)
+        this.head = newNode
+        this.tail = this.head
+        this.length = 1
+    }
+}
+
+// Creating a linked list here 
+let myLinkedList = new LinkedList(4);
+
+// Constructor below creates a new node 
+// Class for a node here
+class Node {
+    constructor(value) {
+        this.value = value
+        this.next = null
+    }
+}
+
+const newNode = new Node(4);
