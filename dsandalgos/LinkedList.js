@@ -38,3 +38,22 @@ class Node {
 }
 
 const newNode = new Node(4);
+
+// PUSH METHOD 
+
+push(value) {
+    const newNode = new Node(value)
+    // first checks if the linked list is empty
+    if (!this.head) {
+        this.head = newNode;
+        this.tail = newNode; 
+    } else {
+        // point current tail to the new node
+        this.tail.next = newNode;
+        // now point the tail to the new node 
+        this.tail = newNode; 
+    }
+    this.length++
+    // return this returns the entire linked list 
+    return this 
+}
