@@ -91,3 +91,21 @@ pop() {
     // the item that was popped off the LL 
     return temp; 
 }
+
+
+// UNSHIFT METHOD 
+// Create a new node, set equal to the head 
+
+unshift(value) {
+    const newNode = new Node(value);
+    if (!this.head) {
+        this.head = newNode;
+        this.tail = newNode;
+    } else {
+        newNode.next = this.head;
+        this.head = newNode; 
+    }
+    this.length++
+    return this;
+}
+
