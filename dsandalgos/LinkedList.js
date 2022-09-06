@@ -39,7 +39,7 @@ class Node {
 
 const newNode = new Node(4);
 
-// PUSH METHOD 
+// PUSH METHOD - O(1)
 
 push(value) {
     const newNode = new Node(value)
@@ -56,4 +56,38 @@ push(value) {
     this.length++
     // return this returns the entire linked list 
     return this 
+}
+
+// POP METHOD - O(n)
+
+// Edge cases, if LL is NULL or has only ONE item.
+// Need to start at the head, until you can point the tail to set equal to the node before. 
+// Use temp variables to keep track of variables
+
+pop() {
+    // if the head is null, or this.length === 0, return undefined
+    if (!this.head) return undefined
+    
+    let temp = this.head
+    let pre = this.head 
+
+    while (temp.next) {
+        // moves to the one before temp.next, temp moves to next
+        pre = temp
+        temp = temp.next
+    }
+    // AFTER WHILE LOOP
+    this.tail = pre; 
+    // breaks the last of the LL off to set equal to null
+    this.tail.next = null;
+    this.length--;
+
+    // AFTER decrementing the length, accounts for a LL with a length of 1!
+    if (this.length === 0) {
+        this.head = null
+        this.tail = null 
+    }
+
+    // the item that was popped off the LL 
+    return temp; 
 }
