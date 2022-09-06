@@ -1,5 +1,7 @@
 // LINKED LISTS 
 
+const { PitchShift } = require("tone")
+
 // Arrays have indexes, LL don't 
 // LL have spaces in memory, arrays are in one place - contiguous place in memory (Linked Lists can be all over the place!)
 // LL has a HEAD and a TAIL for first and last item
@@ -109,3 +111,55 @@ unshift(value) {
     return this;
 }
 
+// SHIFT METHOD 
+// move head over, and return the removed item 
+
+shift() {
+    if (!this.head) return undefined 
+        let output = this.head
+        this.head = this.head.next
+        // set temp var equal to NULL so it doesn't return the list
+        output.next = null; 
+        this.length--
+        // *after* decrementing length, if the LL was already at one, now head.next is null but tail needs to also be set to null
+        if (this.length === 0) {
+            this.tail = null; 
+        }
+        return output; 
+}
+
+// GET METHOD 
+
+get(index) {
+    // anything less than or above the length
+    if (index < 0 || index >= this.length) {
+        return undefined;
+    }
+    let temp = this.head
+    for (let i = 0; i < index; i++) {
+        temp = temp.next 
+    }
+    return temp; 
+}
+
+set(index, value) {
+    if (index < 0 || index >= this.length) {
+        return undefined; 
+    }
+    let temp = this.head
+    for (let i = 0; i < index; i++) {
+        temp = temp.next 
+    }
+    temp.value = value; 
+    return this; 
+}
+// OR WITH GET METHOD!! Reuse the code.  
+set(index, value) { 
+    let temp = this.get(index)
+    // if the temp is not undefined!
+    if (temp) {
+      temp.value = value; 
+      return true; 
+    }
+    return false; 
+}
