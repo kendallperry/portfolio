@@ -111,8 +111,9 @@ unshift(value) {
     return this;
 }
 
-// SHIFT METHOD 
+// SHIFT METHOD - O(1)
 // move head over, and return the removed item 
+// This is where LL are better than arrays, because of the reindexing on arrays for removing first item. 
 
 shift() {
     if (!this.head) return undefined 
@@ -214,4 +215,3 @@ reverse() {
     }
     return this; 
 }
-
