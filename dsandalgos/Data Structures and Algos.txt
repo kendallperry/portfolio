@@ -20,4 +20,13 @@ O(n) - popping something from end of list, since you need to go through entire l
      - deleting a node inside the LL
      - searching by value or index, still O(n), (different from array, array you can find by index at O(1))
 
+
+STACKS: 
+Pushing and popping. LIFO, Last in first out. 
+Back button in your history as an example. 
+Common way to implement is with ARRAY. Add and remove from same end. 
+With arrays, O(1) for the end, O(n) if you are adding to beginning. ADD TO END! 
+.push() and .pop() , built in to JS already. 
+
+
  
