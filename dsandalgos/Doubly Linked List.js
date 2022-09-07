@@ -78,6 +78,9 @@ class DoublyLinkedList {
         return temp 
     }
 
+    get(index) {
+        
+    }
 
 
 }
