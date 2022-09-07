@@ -193,3 +193,25 @@ remove(index) {
 
     return temp; 
 }
+
+// REVERSE METHOD
+
+reverse() {
+    // Flipping head and tail
+    let temp = this.head
+    this.head = this.tail
+    this.tail = temp
+
+    let next = temp.next 
+    let prev = null; 
+
+    // need three temp variables to move through entire LL 
+    for (let i = 0; i < this.length; i++) {
+        next = temp.next 
+        temp.next = prev 
+        prev = temp 
+        temp = next 
+    }
+    return this; 
+}
+
