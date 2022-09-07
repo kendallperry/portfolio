@@ -163,3 +163,33 @@ set(index, value) {
     }
     return false; 
 }
+
+insert(index, value) {
+    if (index === 0) return this.unshift(value);
+    if (index === this.length) return this.push(value);
+    if (index < 0 || index > this.length) return false;
+
+    const newNode = new Node(value);
+    let temp = this.get(this.index - 1); 
+
+    // reassign pointers
+    newNode = temp.next; 
+    temp.next = newNode; 
+    this.length++;
+    return true; 
+}
+
+remove(index) {
+    if (index === 0) return this.shift();
+    if (index === this.length - 1) return this.pop(); 
+    if (index < 0 || index >= this.length) return undefined;
+
+    let before = this.get(index - 1);
+    let temp = before.next; 
+
+    before.next = temp.next
+    temp.next = null; 
+    this.length--; 
+
+    return temp; 
+}
