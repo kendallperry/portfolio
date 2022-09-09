@@ -28,5 +28,23 @@ Common way to implement is with ARRAY. Add and remove from same end.
 With arrays, O(1) for the end, O(n) if you are adding to beginning. ADD TO END! 
 .push() and .pop() , built in to JS already. 
 
+QUEUE: 
+Enqueue and dequeue, FIFO first in first out 
+Array, adding from end O(1), remove from front O(n), can't get away from having one side being O(n)
+Linked List, enqueue from TAIL and dequeue from HEAD, both are O(1)!!
+Instead of Head and Tail, we can call them First and Last using LL structure to build queue!
+
+
+BINARY SEARCH TREE --
+Better for lookup(), remove(), LL has better advantage for insert() because it's O(1)
+Best possible O(log n) - very efficient/divide and conquer
+To find the item, to remove the item, inserting - 
+One node is 2^1 - 1, (or O(1))
+Next level is 2^2 - 1, etc etc...
+Fourth level is 2^4 
+
+if BST is only one line, it would be similar to a LL and you'd have to iterate through the entire tree to find the Node. 
+This would be worst cast, O(n), technically the Big O is O(n)
+We treat BST as O(log n) 
 
  

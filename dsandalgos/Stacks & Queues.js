@@ -18,6 +18,7 @@ class Stack {
         this.length = 1
     }
 
+    //O(1)
     push(value) {
         const newNode = new Node(value);
         if (this.length === 0) {
@@ -30,6 +31,7 @@ class Stack {
         return this; 
     }
 
+    // O(1)
     pop() {
         if (this.length === 0) return undefined
         let temp = this.top
