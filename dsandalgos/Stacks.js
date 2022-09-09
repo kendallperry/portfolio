@@ -58,7 +58,7 @@ class Queue {
         this.length = 1
     }
 
-    // super similar to the .push() method!! 
+    // super similar to the .push() method!!  
     enqueue(value) {
         const newNode = new QNode(value);
         if (this.length === 0) { 
