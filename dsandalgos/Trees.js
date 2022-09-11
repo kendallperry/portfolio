@@ -6,6 +6,7 @@
 // Nodes that don't have any children are considered "leafs"
 
 // Binary Search Tree
+// ** if you have a scenario that might have a duplicate, you can add count to the Node class to increase the amount if you see another node with the same value
 
 class Node {
     constructor(value) {
@@ -20,4 +21,6 @@ class BST {
     constructor() {
         this.root = null  
     }
+
+    insert() {}
 }
