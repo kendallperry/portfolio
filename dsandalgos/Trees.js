@@ -22,5 +22,16 @@ class BST {
         this.root = null  
     }
 
-    insert() {}
+    insert(value) {
+        const newNode = new Node(value)
+        if (this.root === null) {
+            this.root = newNode
+            return this 
+        }
+        let temp = this.root 
+
+        while (true) {
+            if (newNode.value === temp.value) return undefined
+        }
+    }
 }
