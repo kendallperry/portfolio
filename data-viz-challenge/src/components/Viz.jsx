@@ -33,16 +33,17 @@ export default function Viz({ data }) {
               axis: { strokeWidth: 0 },
               tickLabels: { fontSize: 5, padding: 10, stroke: "#", angle: 270 }
             }} />
-        <VictoryBar data={vizData} labelComponent={
-      <VictoryLabel angle={0} verticalAnchor="middle" textAnchor="end"/>
+        <VictoryBar theme={VictoryTheme.material} data={vizData} labelComponent={
+          <VictoryLabel angle={0} verticalAnchor="middle" textAnchor="end"/>
     } />
       </VictoryChart>
-      {/* <VictoryPie
-      labelRadius={({ innerRadius }) => innerRadius + 5 }
-      radius={({ datum }) => 50 + datum.y * 30}
-      innerRadius={30}
+      <VictoryPie
+      data={vizData}
+      //labelRadius={({ innerRadius }) => innerRadius + 10 }
+      // radius={({ datum }) => 50 + datum.y * 5}
+      innerRadius={10}
       colorScale={["tomato", "orange", "gold", "cyan", "navy" ]}
-      /> */}
+      />
     </>
   );
 }

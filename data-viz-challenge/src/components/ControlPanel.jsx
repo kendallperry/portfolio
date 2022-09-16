@@ -33,6 +33,7 @@ export default function ControlPanel({ updateData }) {
   const handelSexChange = useCallback(
     (nextValue) => {
       setSex(nextValue);
+      setIsLoading(true)
     },
     [setSex],
   );
@@ -40,6 +41,7 @@ export default function ControlPanel({ updateData }) {
   const handelYearChange = useCallback(
     (nextValue) => {
       setYear(nextValue);
+      setIsLoading(true);
     },
     [setYear],
   );
