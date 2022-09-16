@@ -18,7 +18,8 @@ export default function Viz({ data }) {
     if (data.length) {
       let newVizData = [];
       // only showing the top 30 countries affected
-      for (let i = 0; i < 30; i++) {
+      // currently displaying backwards for the chart display
+      for (let i = 30; i >= 0; i--) {
         let country = data[i].location_name;
         let mean = data[i].mean;
         let displayObj = { x: country, y: mean };
@@ -32,17 +33,18 @@ export default function Viz({ data }) {
 
   return (
     <>
-      <VictoryChart
+      <VictoryChart horizontal
         theme={VictoryTheme.material}
         domainPadding={10}
-        horizontal={true}
       >
         <VictoryAxis
           style={{
             axis: { strokeWidth: 0 },
+            grid: { stroke: "none" },
             tickLabels: { fontSize: 5, padding: 10, stroke: "#", angle: 0 },
           }}
         />
+        <VictoryAxis dependentAxis />
         <VictoryBar
           theme={VictoryTheme.material}
           data={vizData}

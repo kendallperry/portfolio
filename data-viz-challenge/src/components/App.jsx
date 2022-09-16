@@ -31,9 +31,10 @@ export default function App() {
 
   return (
     <div className="App">
-      <h1>Populations Most Affected by Opioid Use Disorders</h1>
+      <h3>Populations Most Affected by Opioid Use Disorders</h3>
+      <h4>Mean amount per 100,000 people</h4>
       <ControlPanel updateData={updateData} />
-      <Viz data={data} />
+      <Viz data={data} className="viz-data" />
     </div>
   );
 }
