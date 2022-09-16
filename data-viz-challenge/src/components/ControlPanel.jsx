@@ -7,7 +7,7 @@ import './ControlPanel.css';
 export default function ControlPanel({ updateData }) {
   const [sex, setSex] = useState('Females');
   const [year, setYear] = useState(2017);
-  const [isLoading, setIsLoading] = useState(true)
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     if (isLoading) {
@@ -19,21 +19,17 @@ export default function ControlPanel({ updateData }) {
         data.sort((a, b) => {
           return b.mean - a.mean;
         })
-        // setData(data);
-        updateData(data.splice(0,20))
-        console.log('inside useeffect')
+        updateData(data)
       }
       fetchData()
       setIsLoading(!isLoading)
     }
   }, [sex, year, isLoading, updateData])
 
-  //updateData(filteredData)
-
   const handelSexChange = useCallback(
     (nextValue) => {
       setSex(nextValue);
-      setIsLoading(true)
+      setIsLoading(true);
     },
     [setSex],
   );

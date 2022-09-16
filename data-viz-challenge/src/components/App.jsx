@@ -5,9 +5,8 @@ import ControlPanel from "./ControlPanel";
 import Viz from "./Viz";
 
 export default function App() {
-  // make an isLoading for future;
+
   const [data, setData] = useState({});
- // const [isLoading, setIsLoading] = useState(true);
 
   const updateData = (newData) => {
     console.log("inside updateData", newData)
@@ -38,5 +37,3 @@ export default function App() {
     </div>
   );
 }
-
-//updateData={updateData}
