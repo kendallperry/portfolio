@@ -8,6 +8,10 @@ export default function ControlPanel({ updateData }) {
   const [sex, setSex] = useState('Females');
   const [year, setYear] = useState(2017);
   const [isLoading, setIsLoading] = useState(true);
+  const [animate, setAnimate] = useState(false);
+  const [play, setPlay] = useState(false);
+
+  const handleClick = () => setAnimate(!animate);
 
   useEffect(() => {
     if (isLoading) {
@@ -25,6 +29,19 @@ export default function ControlPanel({ updateData }) {
       setIsLoading(false)
     }
   }, [sex, year, isLoading, updateData])
+
+  // useEffect(() => {
+  //   setInterval(() => {
+  //     if (!play) {
+  //       setYear(1990)
+  //       setPlay(true)
+  //     } if (year === 2017) {
+  //       setAnimate(false)
+  //       setPlay(false)
+  //     } 
+  //     setYear((prevYear) => prevYear + 1)
+  //   }, 1000)
+  // })
 
   const handelSexChange = useCallback(
     (nextValue) => {
