@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
 
 import * as api from "../api";
+import Citation from "./Citation";
 import ControlPanel from "./ControlPanel";
 import Viz from "./Viz";
 
 export default function App() {
 
   const [data, setData] = useState({});
-  const [citation, setCitation] = useState('')
+  // const [citation, setCitation] = useState('')
 
   const updateData = (newData) => setData(newData);
 
-  useEffect(() => {
-    async function fetchCitation() {
-      const { citation } = await api.fetchCitation();
-      setCitation(citation);
-    }
-    fetchCitation()
-  }, [])
+  // useEffect(() => {
+  //   async function fetchCitation() {
+  //     const { citation } = await api.fetchCitation();
+  //     setCitation(citation);
+  //   }
+  //   fetchCitation()
+  // }, [])
   
   // Example of how you could fetch data
   // useEffect(() => {
@@ -41,7 +42,7 @@ export default function App() {
       <h4>Mean amount per 100,000 people</h4>
       <ControlPanel updateData={updateData} />
       <Viz data={data} />
-      <p>{citation}</p>
+      <Citation />
     </div>
    
   );
