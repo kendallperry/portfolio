@@ -8,10 +8,7 @@ export default function ControlPanel({ updateData }) {
   const [sex, setSex] = useState('Females');
   const [year, setYear] = useState(2017);
   const [isLoading, setIsLoading] = useState(true);
-  const [animate, setAnimate] = useState(false);
-  const [play, setPlay] = useState(false);
-
-  const handleClick = () => setAnimate(!animate);
+  
 
   useEffect(() => {
     if (isLoading) {
