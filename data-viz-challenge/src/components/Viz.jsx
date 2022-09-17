@@ -32,6 +32,7 @@ export default function Viz({ data }) {
   return (
     <>
      <TopCountriesControl topNumber={topNumber} setTopNumber={setTopNumber} />
+     <h4>Mean amount of people per 100,000</h4>
       <VictoryChart horizontal 
         theme={VictoryTheme.material} 
         domainPadding={8.5}
