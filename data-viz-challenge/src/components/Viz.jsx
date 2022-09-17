@@ -1,6 +1,5 @@
 import "./Viz.css";
 import {
-  VictoryPie,
   VictoryChart,
   VictoryBar,
   VictoryTheme,
@@ -10,16 +9,17 @@ import {
 import { useEffect, useState } from "react";
 
 export default function Viz({ data }) {
+
   const [vizData, setVizData] = useState([]);
 
-  //console.log("inside VIZ", data);
+  // const fakeData = [{x: "US", y: 10}, {x: "Canada", y:7}, {x: "France", y: 3}]
 
   useEffect(() => {
     if (data.length) {
       let newVizData = [];
       // only showing the top 30 countries affected
       // currently displaying backwards for the chart display
-      for (let i = 30; i >= 0; i--) {
+      for (let i = 25; i >= 0; i--) {
         let country = data[i].location_name;
         let mean = data[i].mean;
         let displayObj = { x: country, y: mean };
@@ -29,7 +29,7 @@ export default function Viz({ data }) {
     }
   }, [data]);
 
-  //console.log("after loop", vizData);
+  // console.log("after loop", vizData);
 
   return (
     <>
@@ -44,7 +44,8 @@ export default function Viz({ data }) {
             tickLabels: { fontSize: 5, padding: 10, stroke: "#", angle: 0 },
           }}
         />
-        <VictoryAxis dependentAxis />
+        <VictoryAxis dependentAxis
+          orientation="top" />
         <VictoryBar
           theme={VictoryTheme.material}
           data={vizData}

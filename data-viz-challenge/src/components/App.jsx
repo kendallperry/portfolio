@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 
 import * as api from "../api";
 import ControlPanel from "./ControlPanel";
@@ -10,6 +10,9 @@ export default function App() {
 
   const updateData = (newData) => {
     console.log("inside updateData", newData)
+    // newData.sort((a, b) => {
+    //   return b.mean - a.mean;
+    // })
     setData(newData);
   };
 
@@ -34,7 +37,7 @@ export default function App() {
       <h3>Populations Most Affected by Opioid Use Disorders</h3>
       <h4>Mean amount per 100,000 people</h4>
       <ControlPanel updateData={updateData} />
-      <Viz data={data} className="viz-data" />
+      <Viz data={data} />
     </div>
   );
 }

@@ -22,7 +22,7 @@ export default function ControlPanel({ updateData }) {
         updateData(data)
       }
       fetchData()
-      setIsLoading(!isLoading)
+      setIsLoading(false)
     }
   }, [sex, year, isLoading, updateData])
 
