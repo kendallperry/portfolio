@@ -1,6 +1,6 @@
 export default function Citation() {
   return (
-    <>
+    <div className="citation">
       <h3>Citation</h3>
       <p>
         Global Burden of Disease Collaborative Network. Global Burden of Disease
@@ -8,12 +8,12 @@ export default function Citation() {
         Health Metrics and Evaluation (IHME), 2018.
         <br />
         <br />
-        Available from{" "}
+        Available from {" "}
         <a href={"http://ghdx.healthdata.org/gbd-results-tool"}>
           http://ghdx.healthdata.org/gbd-results-tool
         </a>
         <br />
-        Permalink to opioid use disorder data:{" "}
+        Permalink to opioid use disorder data: {" "}
         <a href="http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2017-permalink/c12b65baf872c661f4640bb583320b4e">
           http://ghdx.healthdata.org/gbd-results-tool?params=gbd-api-2017-permalink/c12b65baf872c661f4640bb583320b4e
         </a>
@@ -26,6 +26,6 @@ export default function Citation() {
         <b>Upper:</b> This is the upper bound of uncertainty for the mean <br />
         <b>Lower:</b> This is the lower bound of uncertainty for the mean <br />
       </p>
-    </>
+    </div>
   );
 }

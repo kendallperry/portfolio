@@ -40,8 +40,8 @@ export default function App() {
     <div className="App">
       <h3>Populations Most Affected by Opioid Use Disorders</h3>
       <h4>Mean amount per 100,000 people</h4>
-      <ControlPanel updateData={updateData} />
-      <Viz data={data} />
+      <ControlPanel updateData={updateData} className='controls' />
+      <Viz data={data} className='viz-data' />
       <Citation />
     </div>
    

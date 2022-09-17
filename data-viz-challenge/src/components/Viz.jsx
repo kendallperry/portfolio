@@ -7,6 +7,7 @@ import {
   VictoryLabel,
 } from "victory";
 import { useEffect, useState } from "react";
+import TopCountriesControl from "./TopCountriesControl";
 
 export default function Viz({ data }) {
   const [vizData, setVizData] = useState([]);
@@ -30,21 +31,16 @@ export default function Viz({ data }) {
 
   return (
     <>
-      <p>Set Top Countries</p>
-      <input
-        type="range"
-        min={5}
-        max={50}
-        onChange={(e) => setTopNumber(e.target.value)}
-        value={topNumber}
-      />{" "}
-      <p>{topNumber}</p>
-      <VictoryChart horizontal theme={VictoryTheme.material} domainPadding={10}>
+     <TopCountriesControl topNumber={topNumber} setTopNumber={setTopNumber} />
+      <VictoryChart horizontal 
+        theme={VictoryTheme.material} 
+        domainPadding={8.5}
+        >
         <VictoryAxis
           style={{
             axis: { strokeWidth: 0 },
             grid: { stroke: "none" },
-            tickLabels: { fontSize: 5, padding: 10, stroke: "#", angle: 0 },
+            tickLabels: { fontSize: 4.5, padding: 0.5, margin: 10, stroke: "#", angle: 0 },
           }}
         />
         <VictoryAxis dependentAxis orientation="top" />

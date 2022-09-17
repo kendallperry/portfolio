@@ -1,14 +1,13 @@
-import { useCallback, useState, useEffect } from 'react';
+import { useCallback, useState, useEffect } from "react";
 
-import { SexControl, YearControl }  from './controls';
-import * as api from '../api';
-import './ControlPanel.css';
+import { SexControl, YearControl } from "./controls";
+import * as api from "../api";
+import "./ControlPanel.css";
 
 export default function ControlPanel({ updateData }) {
-  const [sex, setSex] = useState('Females');
+  const [sex, setSex] = useState("Females");
   const [year, setYear] = useState(2017);
   const [isLoading, setIsLoading] = useState(true);
-  
 
   useEffect(() => {
     if (isLoading) {
@@ -19,33 +18,20 @@ export default function ControlPanel({ updateData }) {
         });
         data.sort((a, b) => {
           return b.mean - a.mean;
-        })
-        updateData(data)
+        });
+        updateData(data);
       }
-      fetchData()
-      setIsLoading(false)
+      fetchData();
+      setIsLoading(false);
     }
-  }, [sex, year, isLoading, updateData])
-
-  // useEffect(() => {
-  //   setInterval(() => {
-  //     if (!play) {
-  //       setYear(1990)
-  //       setPlay(true)
-  //     } if (year === 2017) {
-  //       setAnimate(false)
-  //       setPlay(false)
-  //     } 
-  //     setYear((prevYear) => prevYear + 1)
-  //   }, 1000)
-  // })
+  }, [sex, year, isLoading, updateData]);
 
   const handelSexChange = useCallback(
     (nextValue) => {
       setSex(nextValue);
       setIsLoading(true);
     },
-    [setSex],
+    [setSex]
   );
 
   const handelYearChange = useCallback(
@@ -53,13 +39,18 @@ export default function ControlPanel({ updateData }) {
       setYear(nextValue);
       setIsLoading(true);
     },
-    [setYear],
+    [setYear]
   );
 
   return (
     <div className="control-panel">
       <SexControl value={sex} onChange={handelSexChange} />
-      <YearControl max={2017} min={1990} value={year} onChange={handelYearChange} />
+      <YearControl
+        max={2017}
+        min={1990}
+        value={year}
+        onChange={handelYearChange}
+      />
     </div>
   );
 }

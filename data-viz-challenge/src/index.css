@@ -12,3 +12,21 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
+
+.top-country-slider {
+  display: flex;
+}
+
+.citation {
+  border: 1px solid black;
+  padding: 2%;
+  margin: 4%;
+}
+
+/* .controls {
+  display: flex;
+}
+
+.viz-data {
+  display: flex;
+} */
