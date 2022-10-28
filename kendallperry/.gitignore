@@ -5,11 +5,11 @@
 /.pnp
 .pnp.js
 
-dsandalgos/
-porfolio/
-my-website/
-sfs-challenge/
-data-viz-challenge/
+/dsandalgos/
+/porfolio/
+/my-website/
+/sfs-challenge/
+../data-viz-challenge/
 
 # testing
 /coverage
