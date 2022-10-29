@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import NavBar from './components/NavBar';
-// import Header from './components/Header'
+// import Animation from './components/Animation';
 import About from './components/About'
 import AllProjects from './components/AllProjects';
 import Skills from './components/Skills';
@@ -11,7 +11,7 @@ function App() {
   return (
   <div className="App">
     <NavBar/>
-    {/* <Header /> */}
+    {/* <Animation /> */}
     <About />
     <AllProjects />
     <Skills />
