@@ -55,7 +55,7 @@ const Contact = () => {
       <div id="contact">
         {links.map((link, idx) => {
           return (
-            <a href={link.url} target="_blank" rel="noreferrer">
+            <a href={link.url} key={idx} target="_blank" rel="noreferrer">
               {link.svg}
             </a>
           );

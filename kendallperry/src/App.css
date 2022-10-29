@@ -7,8 +7,13 @@ a {
   text-decoration: none;
 }
 
-a:hover {
+button:hover {
   color: #6E7582
+}
+
+button {
+  background-color: transparent;
+  border: none;
 }
 
 #about {
