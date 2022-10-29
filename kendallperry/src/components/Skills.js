@@ -3,7 +3,8 @@ import React from "react";
 const Skills = () => {
   return (
     <>
-      <h2>Languages and Tools:</h2>
+    <h2>Languages and Tools:</h2>
+    <div id="skills">
       <p>
         {" "}
         <a href="https://nodejs.org" target="_blank" rel="noreferrer">
@@ -234,6 +235,7 @@ const Skills = () => {
           />{" "}
         </a>{" "}
       </p>
+    </div>
     </>
   );
 };

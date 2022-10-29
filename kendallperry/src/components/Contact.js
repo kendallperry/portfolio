@@ -48,11 +48,11 @@ const links = [
   },
 ];
 
-const Links = () => {
+const Contact = () => {
   return (
     <>
       <h2>Contact</h2>
-      <div id="links">
+      <div id="contact">
         {links.map((link, idx) => {
           return (
             <a href={link.url} target="_blank" rel="noreferrer">
@@ -65,4 +65,4 @@ const Links = () => {
   );
 };
 
-export default Links;
+export default Contact;

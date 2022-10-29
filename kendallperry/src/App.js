@@ -1,19 +1,21 @@
 import React from 'react';
 import './App.css';
-import Header from './components/Header'
+import NavBar from './components/NavBar';
+// import Header from './components/Header'
 import About from './components/About'
 import AllProjects from './components/AllProjects';
 import Skills from './components/Skills';
-import Links from './components/Links'
+import Contact from './components/Contact'
 
 function App() {
   return (
   <div className="App">
-    <Header />
+    <NavBar/>
+    {/* <Header /> */}
     <About />
     <AllProjects />
     <Skills />
-    <Links />
+    <Contact />
   </div>
   );
 }
