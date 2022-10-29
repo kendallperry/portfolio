@@ -2,7 +2,7 @@ import React from "react";
 
 const Project = ({project}) => {
     return (
-        <div id="projects">
+        <div id="individual-project">
             <h4>{project.title}</h4>
             <img src = {project.image} className="image" alt="Project" />
             <p>{project.description}</p>

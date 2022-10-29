@@ -39,9 +39,9 @@ const projectBank = [
 
 const AllProjects = () => {
   return (
-    <div id="projects">
+    <div className="content-projects">
       <h2>Projects</h2>
-      <div className="content-projects">
+      <div id="projects">
         {projectBank.map((project, idx) => (
           <Project key={idx} project={project} />
         ))}
