@@ -1,9 +1,12 @@
 import React from "react";
+import headshot from '../images/kendall-headshot.jpg'
 
 const About = () => {
   return (
     <div id="about">
       <h2>About</h2>
+      <p>Hello, I'm Kendall</p>
+      <img className="image" src={headshot} alt="Kendall Perry Headshot"/>
       <p>
         Prior to becoming a software engineer, I was a freelance
         musician/composer for ten years. During that time, I composed, directed,
