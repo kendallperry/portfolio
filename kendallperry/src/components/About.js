@@ -4,10 +4,10 @@ import headshot from '../images/kendall-headshot.jpg'
 const About = () => {
   return (
     <div id="about">
-    <h2>About</h2>
+    <h2 align="left">About</h2>
     <div className="content-section">
       <img className="image" src={headshot} alt="Kendall Perry Headshot"/>
-      <p>
+      <p className='about-text'>
         Hello, I'm Kendall!
     <br /> <br/>
         Prior to becoming a software engineer, I was a freelance

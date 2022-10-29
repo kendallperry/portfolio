@@ -8,7 +8,7 @@ const NavBar = ({ updatePage }) => {
       <button onClick={() => updatePage("About")}>About</button>
       <button onClick={() => updatePage("Projects")}>Projects</button>
       <button onClick={() => updatePage("Skills")}>Skills</button>
-      <button onClick={() => updatePage("Contact")}>Contact</button>
+      {/* <button onClick={() => updatePage("Contact")}>Contact</button> */}
       <img src={logo} alt="logo" id="logo" />
     </div>
   );

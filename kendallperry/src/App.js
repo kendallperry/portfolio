@@ -10,7 +10,7 @@ import Contact from './components/Contact'
 function App() {
 
   const [currentPage, setCurrentPage] = useState('About');
-  // // About, Projects, Skills, Contact
+  // // About, Projects, Skills
 
   const updatePage = (page) => setCurrentPage(page);
 
@@ -20,7 +20,7 @@ function App() {
     {currentPage === 'About' ? <About /> : null}
     {currentPage === 'Projects' ? <AllProjects /> : null}
     {currentPage === 'Skills' ? <Skills /> : null}
-    {currentPage === 'Contact' ? <Contact /> : null}
+    <Contact />
   </div>
   );
 }
