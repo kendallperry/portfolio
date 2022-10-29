@@ -34,11 +34,16 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  background: linear-gradient(
+  /* background: linear-gradient(
     90deg,
     rgba(238, 174, 202, 0.6797312675070029) 0%,
     rgba(148, 187, 233, 0.6237088585434174) 100%
-  );}
+  ); */
+}
+
+#logo {
+  width: 50px;
+}
 
 #skills {
   margin: 5%;
