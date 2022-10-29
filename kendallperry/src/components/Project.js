@@ -4,7 +4,7 @@ const Project = ({project}) => {
     return (
         <div id="individual-project">
             <h4>{project.title}</h4>
-            <img src = {project.image} className="image" alt="Project" />
+            <img src = {project.image} className="project-image" alt="Project" />
             <p>{project.description}</p>
             <a href={project.deployedUrl}  target="_blank" rel="noopener noreferrer">{project.deployedUrl.length ? 'Deployed Link' : null}</a>
             <br />

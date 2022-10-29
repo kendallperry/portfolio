@@ -18,7 +18,7 @@ const links = [
   },
   {
     name: "LinkedIn",
-    url: "https://www.linkedin.com/in/kendallperry/",
+    url: "https://www.linkedin.com/in/kendalllperry/",
     svg: (
       <svg
         className="contact-icon"
