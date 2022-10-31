@@ -20,7 +20,7 @@ function App() {
     {currentPage === 'About' ? <About /> : null}
     {currentPage === 'Projects' ? <AllProjects /> : null}
     {currentPage === 'Skills' ? <Skills /> : null}
-    <Contact />
+    {currentPage === 'Contact' ? <Contact /> : null}
   </div>
   );
 }

@@ -51,13 +51,13 @@ const links = [
 const Contact = () => {
   return (
     <>
-      {/* <h2>Contact</h2> */}
+      <h2>Contact</h2>
       <div id="contact">
         {links.map((link, idx) => {
           return (
             <a href={link.url} key={idx} className='icon' target="_blank" rel="noreferrer">
               {link.svg}
-            </a>
+            </a> 
           );
         })}
       </div>

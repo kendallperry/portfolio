@@ -1,15 +1,25 @@
 body {
-  background: linear-gradient(
-    90deg,
-    rgba(238, 174, 202, 0.6797312675070029) 0%,
-    rgba(148, 187, 233, 0.6237088585434174) 100%
-  );
+  background: linear-gradient(300deg,white, #efb851, #eeaeca, rgba(148, 187, 233, 0.6237088585434174));
+  background-size: 180% 180%;
+  animation: gradient-animation 12s ease infinite;
   min-height: calc(var(--vh, 1vh)*90);
   border: 1px solid black;
   margin: 2%;
   font-family: Helvetica, Arial, Sans-Serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 code {
