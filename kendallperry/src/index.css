@@ -5,9 +5,9 @@ body {
     rgba(148, 187, 233, 0.6237088585434174) 100%
   );
   min-height: calc(var(--vh, 1vh)*90);
-  border: 1px solid rgba(38, 38, 38, 0.951);
+  border: 1px solid black;
   margin: 2%;
-  font-family: "Neue Montreal";
+  font-family: Helvetica, Arial, Sans-Serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
