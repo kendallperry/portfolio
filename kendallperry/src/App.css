@@ -24,8 +24,10 @@ button {
 }
 
 .about-text {
-  margin: 5%;
-  align-items: left;
+  margin: 2%;
+  padding: 2%;
+  background-color: rgba(255, 255, 255, 0.192);
+
 }
 
 .content-section {
@@ -58,6 +60,8 @@ button {
   width: 45%;
   align-items: center;
   margin: 20px;
+  /* border: 1px solid black; */
+  background-color: rgba(255, 255, 255, 0.192);
 }
 
 #projects {

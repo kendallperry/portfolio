@@ -2,7 +2,7 @@ body {
   background: linear-gradient(300deg,white, #efb851, #eeaeca, rgba(148, 187, 233, 0.6237088585434174));
   background-size: 180% 180%;
   animation: gradient-animation 12s ease infinite;
-  min-height: calc(var(--vh, 1vh)*90);
+  min-height: calc(var(--vh, 1vh)*92);
   border: 1px solid black;
   margin: 2%;
   font-family: Helvetica, Arial, Sans-Serif;
