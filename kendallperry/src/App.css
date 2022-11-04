@@ -84,6 +84,13 @@ button {
   margin: 1%;
 }
 
+.project-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+
 #projects {
   display: flex;
   flex-wrap: wrap;

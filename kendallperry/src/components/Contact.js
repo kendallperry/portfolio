@@ -36,13 +36,14 @@ const links = [
     url: "https://docs.google.com/document/d/1n9L_pYcPvN2eL3TyFEIzl6VcGwlxgWrwRLIrapGBPkA/edit?usp=sharing",
     svg: (
       <svg
-        className="contact-icon"
-        xmlns="http://www.w3.org/2000/svg"
         width="40"
         height="40"
+        xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 24 24"
+        fill-rule="evenodd"
+        clip-rule="evenodd"
       >
-        <path d="M11.362 2c4.156 0 2.638 6 2.638 6s6-1.65 6 2.457v11.543h-16v-20h7.362zm.827-2h-10.189v24h20v-14.386c0-2.391-6.648-9.614-9.811-9.614zm4.811 13h-10v-1h10v1zm0 2h-10v1h10v-1zm0 3h-10v1h10v-1z" />
+        <path d="M3 24h19v-23h-1v22h-18v1zm17-24h-18v22h18v-22zm-1 1h-16v20h16v-20zm-2 16h-12v1h12v-1zm0-3h-12v1h12v-1zm0-3h-12v1h12v-1zm-7.348-3.863l.948.3c-.145.529-.387.922-.725 1.178-.338.257-.767.385-1.287.385-.643 0-1.171-.22-1.585-.659-.414-.439-.621-1.04-.621-1.802 0-.806.208-1.432.624-1.878.416-.446.963-.669 1.642-.669.592 0 1.073.175 1.443.525.221.207.386.505.496.892l-.968.231c-.057-.251-.177-.449-.358-.594-.182-.146-.403-.218-.663-.218-.359 0-.65.129-.874.386-.223.258-.335.675-.335 1.252 0 .613.11 1.049.331 1.308.22.26.506.39.858.39.26 0 .484-.082.671-.248.187-.165.322-.425.403-.779zm3.023 1.78l-1.731-4.842h1.06l1.226 3.584 1.186-3.584h1.037l-1.734 4.842h-1.044z" />
       </svg>
     ),
   },
@@ -55,9 +56,15 @@ const Contact = () => {
       <div id="contact">
         {links.map((link, idx) => {
           return (
-            <a href={link.url} key={idx} className='icon' target="_blank" rel="noreferrer">
+            <a
+              href={link.url}
+              key={idx}
+              className="icon"
+              target="_blank"
+              rel="noreferrer"
+            >
               {link.svg}
-            </a> 
+            </a>
           );
         })}
       </div>

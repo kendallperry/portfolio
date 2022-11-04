@@ -30,17 +30,19 @@ const Project = ({ project }) => {
         <img src={project.image} className="project-image" alt="Project" />
         <div className="inner-project-text">
           <p>{project.description}</p>
-          <a
-            href={project.deployedUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {project.deployedUrl.length ? deployLink : null}
-          </a>
-          <br />
-          <a href={project.github} target="_blank" rel="noopener noreferrer">
-            {githubLogo}
-          </a>
+          <div className="project-links">
+            <a
+              href={project.deployedUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {project.deployedUrl.length ? deployLink : null}
+            </a>
+            <br />
+            <a href={project.github} target="_blank" rel="noopener noreferrer">
+              {githubLogo}
+            </a>
+          </div>
         </div>
       </div>
     </div>
