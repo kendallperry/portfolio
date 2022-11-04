@@ -3,7 +3,13 @@ import React from "react";
 const Skills = () => {
   return (
     <>
-    <h2>Languages and Tools:</h2>
+    <div>
+    <h2>Technical Skills:</h2>
+      <p>Languages: JavaScript, CSS3, HTML5 </p>
+      <p>Libraries: React, Redux, Node.js, Express, PostgreSQL, Sequelize, Styled Components, Victory, GraphQL, Prisma, p5.sound, Tone.js, Anime.js</p>
+      <p>Tools: Git, GitHub, Heroku, Mocha, Chai</p>
+      <p>Additional: UX/UI Design, Data Visualization, Adobe Illustrator, Adobe InDesign, Photoshop, Logic Pro X, Ableton</p>
+    </div>
     <div id="skills">
       <p>
         {" "}

@@ -1,17 +1,18 @@
 import React from "react";
-import headshot from '../images/kendall-headshot.jpg'
+import headshot from '../images/kendall-headshot-copy.jpg'
 
 const About = () => {
   return (
     <div id="about">
-    <h2 align="left">About</h2>
+    <h2>About</h2>
     <div className="content-section">
       <img className="image" src={headshot} alt="Kendall Perry Headshot"/>
       <p className='about-text'>
-        Hello, I'm Kendall!
+        Hello, I'm Kendall! <span><i>(they/them)</i></span>
     <br /> <br/>
+    {/* I am a full-stack and front-end web developer, with focus on design and user experience.  */}
         Prior to becoming a software engineer, I was a freelance
-        musician/composer for ten years with a background in UX/UI Web Design. During that time, I composed, directed,
+        musician/composer for ten years. During that time, I composed, directed,
         and co-produced numerous original projects as a multi-instrumentalist
         and composer, including four productions with Wild Heart Dance company,
         and more recently, a concert series with the Ring of Keys at Joe's Pub

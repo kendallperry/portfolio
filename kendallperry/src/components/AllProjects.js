@@ -3,6 +3,7 @@ import Project from "./Project";
 import creatureCoders from "../images/creature-coders.png";
 import kilnMeSoftly from "../images/kiln-me-softly.png";
 import ihmeDataViz from "../images/ihme-data-viz.png";
+import portfolio from '../images/portfolio1.png'
 
 const projectBank = [
   {
@@ -33,7 +34,7 @@ const projectBank = [
     github:
       "https://github.com/kendallperry/kendall-portfolio/tree/main/kendallperry",
     description: "Built and designed personal portfolio using Create React App",
-    image: "",
+    image: portfolio,
   },
 ];
 

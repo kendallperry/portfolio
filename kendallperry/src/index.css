@@ -1,3 +1,23 @@
+@font-face {
+  font-family: "Neue Montreal";
+  src: url(../public/font/ppneuemontreal-medium-webfont.woff);
+}
+
+@font-face {
+  font-family: "Neue Montreal Bold";
+  src: url(../public/font/ppneuemontreal-bold-webfont.woff);
+}
+
+@font-face {
+  font-family: "Neue Montreal Bold";
+  src: url(../public/font/ppneuemontreal-bold-webfont.woff2);
+}
+
+@font-face {
+  font-family: "Neue Montreal Italic";
+  src: url(../public/font/ppneuemontreal-italic-webfont.woff);
+}
+
 body {
   background: linear-gradient(300deg,white, #efb851, #eeaeca, rgba(148, 187, 233, 0.6237088585434174));
   background-size: 180% 180%;
@@ -5,7 +25,7 @@ body {
   min-height: calc(var(--vh, 1vh)*92);
   border: 1px solid black;
   margin: 2%;
-  font-family: Helvetica, Arial, Sans-Serif;
+  font-family: "Neue Montreal", Helvetica, Arial, Sans-Serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -29,7 +49,7 @@ code {
 
 h2, h1 {
   color: #000000;
-  font-weight: 300;
+  font-weight: 200;
 }
 
 p {

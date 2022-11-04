@@ -4,7 +4,8 @@ import logo from "../images/logo.png";
 const NavBar = ({ updatePage }) => {
   return (
     <div id="nav">
-      <h1>Kendall Perry</h1>
+      {/* <button onClick={() => updatePage("Home")}></button> */}
+      <h1 className="nav-name">Kendall Perry</h1>
       <button onClick={() => updatePage("About")}>About</button>
       <button onClick={() => updatePage("Projects")}>Projects</button>
       <button onClick={() => updatePage("Skills")}>Skills</button>
