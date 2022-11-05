@@ -1,4 +1,5 @@
 import React from "react";
+import EmailForm from "./EmailForm";
 
 const links = [
   {
@@ -53,6 +54,7 @@ const Contact = () => {
   return (
     <>
       <h2>Contact</h2>
+      <EmailForm />
       <div id="contact">
         {links.map((link, idx) => {
           return (
