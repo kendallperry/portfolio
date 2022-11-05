@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.a9a09d3f.css",
+    "main.js": "/portfolio/static/js/main.97a6ad27.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/portfolio1.png": "/portfolio/static/media/portfolio1.638fc426dbf41b5693f1.png",
+    "static/media/kiln-me-softly.png": "/portfolio/static/media/kiln-me-softly.c2a5e56807253fa92ab2.png",
+    "static/media/logo.png": "/portfolio/static/media/logo.75f39fbac7d7292055b6.png",
+    "static/media/creature-coders.png": "/portfolio/static/media/creature-coders.ee73417b6ad0e9a5a2ed.png",
+    "static/media/kendall-headshot-copy.jpg": "/portfolio/static/media/kendall-headshot-copy.983f00de21b990775ba7.jpg",
+    "static/media/ihme-data-viz.png": "/portfolio/static/media/ihme-data-viz.3b28150067a496ac60f8.png",
+    "static/media/ppneuemontreal-bold-webfont.woff": "/portfolio/static/media/ppneuemontreal-bold-webfont.5bb978b5f06042d08176.woff",
+    "static/media/ppneuemontreal-medium-webfont.woff": "/portfolio/static/media/ppneuemontreal-medium-webfont.21a60d2f7c7e2c31b6f3.woff",
+    "static/media/ppneuemontreal-italic-webfont.woff": "/portfolio/static/media/ppneuemontreal-italic-webfont.3065c0f20a3a7e70e55d.woff",
+    "static/media/ppneuemontreal-bold-webfont.woff2": "/portfolio/static/media/ppneuemontreal-bold-webfont.0f24cfcc6ed79d2cc311.woff2",
+    "index.html": "/portfolio/index.html",
+    "main.a9a09d3f.css.map": "/portfolio/static/css/main.a9a09d3f.css.map",
+    "main.97a6ad27.js.map": "/portfolio/static/js/main.97a6ad27.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a9a09d3f.css",
+    "static/js/main.97a6ad27.js"
+  ]
+}
