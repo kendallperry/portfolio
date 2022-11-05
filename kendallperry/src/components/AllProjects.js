@@ -10,14 +10,14 @@ const projectBank = [
     title: "Creature Coders",
     deployedUrl: "https://creature-coders.herokuapp.com/",
     github: "https://github.com/pigeon-programmers/creature-coders-web",
-    description: "A mobile learn-to-code game for beginners",
+    description: "A mobile learn-to-code game for beginners of all ages, built with Blockly.",
     image: creatureCoders,
   },
   {
     title: "Kiln Me Softly",
     deployedUrl: "https://kiln-me-softly.herokuapp.com/",
     github: "https://github.com/j-sky-graceshopper/kiln-me-softly",
-    description: "A mock-up eCommerce store selling pottery",
+    description: "A mock-up e-Commerce store selling pottery, equipped with a demo Stripe API.",
     image: kilnMeSoftly,
   },
   {
@@ -25,7 +25,7 @@ const projectBank = [
     deployedUrl: "",
     github: "https://github.com/kendallperry/IHME-Data-Viz-Challenge",
     description:
-      "Data Vizualization challenge displaying real data from IHME using the Victory library",
+      "Data Vizualization challenge displaying real data from IHME using the Victory Visualization library.",
     image: ihmeDataViz,
   },
   {
@@ -33,7 +33,7 @@ const projectBank = [
     deployedUrl: "",
     github:
       "https://github.com/kendallperry/kendall-portfolio/tree/main/kendallperry",
-    description: "Built and designed personal portfolio using Create React App",
+    description: "Built and designed by yours truly, my personal portfolio!",
     image: portfolio,
   },
 ];

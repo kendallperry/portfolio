@@ -25,7 +25,7 @@ const deployLink = (
 const Project = ({ project }) => {
   return (
     <div id="individual-project">
-      <h4>{project.title}</h4>
+      <h3 className="projectTitle">{project.title}</h3>
       <div className="inner-project">
         <img src={project.image} className="project-image" alt="Project" />
         <div className="inner-project-text">
