@@ -10,7 +10,7 @@ const About = () => {
       <p className='about-text'>
         Hello, I'm Kendall! <span><i>(they/them)</i></span>
     <br /> <br/>
-    I am a full-stack software engineer, with focus on design and user experience. 
+    I am a creative and collaborative Full Stack Software Engineer based in Brooklyn, NY. 
     <br /><br />
         Prior to becoming a software engineer, I was a freelance
         musician/composer for ten years. During that time, I composed, directed,

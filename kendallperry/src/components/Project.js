@@ -30,6 +30,7 @@ const Project = ({ project }) => {
         <img src={project.image} className="project-image" alt="Project" />
         <div className="inner-project-text">
           <p>{project.description}</p>
+          <p>{project.techStack}</p>
           <div className="project-links">
             <a
               href={project.deployedUrl}
