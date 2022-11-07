@@ -22,8 +22,8 @@ const EmailForm = () => {
         (result) => {
           console.log(result.text);
           console.log("message sent");
-          window.alert("Message Sent!")
           e.target.reset();
+          window.alert("Message Sent!")
         },
         (error) => {
           console.log(error.text);
