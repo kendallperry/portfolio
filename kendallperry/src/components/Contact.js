@@ -55,6 +55,7 @@ const Contact = () => {
   return (
     <>
       <h2>Contact</h2>
+      <ContactForm>
       <EmailForm />
       <ContactLinks>
         {links.map((link, idx) => {
@@ -71,11 +72,18 @@ const Contact = () => {
           );
         })}
       </ContactLinks>
+      </ContactForm>
     </>
   );
 };
 
 export default Contact;
+
+const ContactForm = styled.div`
+    background: rgba(255, 255, 255, 0.192);
+    margin-left: 15%;
+    margin-right: 15%;
+`
 
 const ContactLinks = styled.div`
     padding-bottom: 3em;
