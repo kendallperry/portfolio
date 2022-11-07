@@ -1,5 +1,6 @@
 import React from "react";
 import EmailForm from "./EmailForm";
+import styled from "styled-components";
 
 const links = [
   {
@@ -55,7 +56,7 @@ const Contact = () => {
     <>
       <h2>Contact</h2>
       <EmailForm />
-      <div id="contact">
+      <ContactLinks>
         {links.map((link, idx) => {
           return (
             <a
@@ -69,9 +70,13 @@ const Contact = () => {
             </a>
           );
         })}
-      </div>
+      </ContactLinks>
     </>
   );
 };
 
 export default Contact;
+
+const ContactLinks = styled.div`
+    padding-bottom: 3em;
+`

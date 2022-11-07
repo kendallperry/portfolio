@@ -33,7 +33,7 @@ input {
 }
 
 #submitButton:hover {
-  background: rgba(148, 187, 233, 0.6237088585434174);
+  background: rgba(57, 106, 161, 0.624);
 }
 
 #about {
@@ -48,33 +48,11 @@ input {
 
 }
 
-#emailForm {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  padding: 10%;
-  padding-top: 5%;
-  margin-bottom: 3%;
-  background-color: rgba(255, 255, 255, 0.192);
-
-}
-
-/* #contact {
-  
-} */
-
 .content-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-
-/* .content-projects {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  /* justify-content: space-between; */
-
 
 #nav {
   padding: 10px;
