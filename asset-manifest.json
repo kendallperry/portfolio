@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.e2165c3f.css",
-    "main.js": "/portfolio/static/js/main.1cefa5dd.js",
+    "main.css": "/portfolio/static/css/main.d07286fd.css",
+    "main.js": "/portfolio/static/js/main.f0ba1c8d.js",
     "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
     "static/media/portfolio1.png": "/portfolio/static/media/portfolio1.638fc426dbf41b5693f1.png",
     "static/media/kiln-me-softly.png": "/portfolio/static/media/kiln-me-softly.c2a5e56807253fa92ab2.png",
@@ -14,12 +14,12 @@
     "static/media/ppneuemontreal-italic-webfont.woff": "/portfolio/static/media/ppneuemontreal-italic-webfont.3065c0f20a3a7e70e55d.woff",
     "static/media/ppneuemontreal-bold-webfont.woff2": "/portfolio/static/media/ppneuemontreal-bold-webfont.0f24cfcc6ed79d2cc311.woff2",
     "index.html": "/portfolio/index.html",
-    "main.e2165c3f.css.map": "/portfolio/static/css/main.e2165c3f.css.map",
-    "main.1cefa5dd.js.map": "/portfolio/static/js/main.1cefa5dd.js.map",
+    "main.d07286fd.css.map": "/portfolio/static/css/main.d07286fd.css.map",
+    "main.f0ba1c8d.js.map": "/portfolio/static/js/main.f0ba1c8d.js.map",
     "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e2165c3f.css",
-    "static/js/main.1cefa5dd.js"
+    "static/css/main.d07286fd.css",
+    "static/js/main.f0ba1c8d.js"
   ]
 }
