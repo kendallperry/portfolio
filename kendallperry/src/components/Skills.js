@@ -4,7 +4,7 @@ import styled from "styled-components";
 const Skills = () => {
   return (
     <>
-      <h2>Technical Skills:</h2>
+      <h2>Technical Skills</h2>
       <TechnicalSkills>
         <p>
           <b>Languages:</b> JavaScript, CSS3, HTML5{" "}
@@ -277,5 +277,8 @@ const TechnicalSkills = styled.div`
   margin-left: 15%;
   margin-right: 15%;
   background: rgba(255, 255, 255, 0.192);
-  padding: 3em;
+  padding-left: 4em;
+  padding-right: 4em;
+  padding-top: 2em;
+  margin-bottom: 5%;
 `;
