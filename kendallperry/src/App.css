@@ -22,6 +22,20 @@ button {
   font-size: medium;
 }
 
+input {
+  width: 100%;
+  margin: 2%;
+}
+
+#submitButton {
+  border: 1px solid black;
+  padding: 3px;
+}
+
+#submitButton:hover {
+  background: rgba(148, 187, 233, 0.6237088585434174);
+}
+
 #about {
   color: black;
   margin-left: 5%;
@@ -30,6 +44,17 @@ button {
 .about-text {
   margin: 2%;
   padding: 2%;
+  background-color: rgba(255, 255, 255, 0.192);
+
+}
+
+#emailForm {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  padding: 10%;
+  padding-top: 5%;
+  margin-bottom: 3%;
   background-color: rgba(255, 255, 255, 0.192);
 
 }
