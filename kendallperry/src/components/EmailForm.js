@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import styled from "styled-components";
 
@@ -6,6 +6,22 @@ import styled from "styled-components";
 // const templateID = process.env.TEMPLATE_ID;
 
 const EmailForm = () => {
+  const [email, setEmail] = useState('')
+  const [error, setError] = useState(null)
+
+  const isValidEmail = (email) => {
+    return /\S+@\S+\.\S+/.test(email)
+  }
+
+  const handleChange = (e) => {
+    if (!isValidEmail(e.target.value)) {
+      setError('Email is invalid, please try again')
+    } else {
+      setError(null)
+    }
+    setEmail(e.target.value);
+  }
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -37,7 +53,7 @@ const EmailForm = () => {
         <label>Name</label>
         <input type="text" name="user_name" />
         <label>Email</label>
-        <input type="email" name="user_email" />
+        <input type="email" name="user_email" value={email} onChange={handleChange} />
         <label>Write a Message</label>
         <textarea name="message" />
         <input id="submitButton" type="submit" value="Send" />

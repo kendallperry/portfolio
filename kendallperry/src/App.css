@@ -82,8 +82,31 @@ input {
   background-color: rgba(255, 255, 255, 0.192);
 }
 
+.image {
+  width: 30%;
+  margin: 5px;
+  border-radius: 50%;
+}
+
 @media (max-width: 820px) {
   #individual-project {
+    width: 80%;
+  }
+  .content-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .content-section {
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
     width: 80%;
   }
 }
@@ -119,12 +142,6 @@ input {
 
 #skills {
   margin: 5%;
-}
-
-.image {
-  width: 25%;
-  margin: 5px;
-  border-radius: 50%;
 }
 
 .project-image {
