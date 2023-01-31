@@ -3,7 +3,8 @@ import Project from "./Project";
 import creatureCoders from "../images/creature-coders.png";
 import kilnMeSoftly from "../images/kiln-me-softly.png";
 import ihmeDataViz from "../images/ihme-data-viz.png";
-import portfolio from '../images/portfolio1.png'
+import portfolio from '../images/portfolio1.png';
+import archDiagram from '../images/cc-architecture-diagram.png';
 
 const projectBank = [
   {
@@ -13,6 +14,14 @@ const projectBank = [
     description: "A mobile learn-to-code game for beginners of all ages.",
     techStack: "Built with JavaScript, React, Redux, Blockly, Node.js, Express, PostgreSQL, Sequelize, React Native Webview",
     image: creatureCoders,
+  },
+  {
+    title: "Creature Coders with CI/CD Pipeline",
+    deployedUrl: "",
+    github: "https://github.com/strategio-tech/fp-sim6-error-007",
+    description: "A pipeline build for continuous integration and continuous development with the Creature Coders app",
+    techStack: "Pipeline built with AWS ECR & ECS, AWS Cloud Watch, Docker, GitHub Actions, AWS RDS PostgreSQL Instance, Selenium",
+    image: archDiagram,
   },
   {
     title: "Kiln Me Softly",
